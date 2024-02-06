@@ -45,7 +45,7 @@ controlling a given gripper, and commanded by the user commands puubished by an 
 """
 
 from robotiq_2f_gripper_control.robotiq_2f_gripper import Robotiq2FingerGripper
-from robotiq_2f_gripper_control.robotiq_2f_gripper_msgs.msg import RobotiqGripperCommand, RobotiqGripperStatus, CommandRobotiqGripperGoal
+from robotiq_2f_gripper_msgs.msg import RobotiqGripperCommand, RobotiqGripperStatus, CommandRobotiqGripperGoal
 from sensor_msgs.msg import JointState
 import numpy as np
 import rospy

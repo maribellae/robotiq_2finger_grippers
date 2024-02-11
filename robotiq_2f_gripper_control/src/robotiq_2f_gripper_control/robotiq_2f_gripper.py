@@ -1,7 +1,9 @@
 import serial
 from serial.serialutil import SerialException
+import os
 
 from pymodbus.client import ModbusSerialClient
+print(os.getcwd())
 #import robotiq_modbus_rtu
 import robotiq_modbus_rtu.src.robotiq_modbus_rtu.comModbusRtu
 #import robotiq_modbus_rtu.comModbusRtu

@@ -3,6 +3,7 @@ from serial.serialutil import SerialException
 
 from pymodbus.client import ModbusSerialClient
 import robotiq_modbus_rtu
+import robotiq_modbus_rtu.src.robotiq_modbus_rtu.comModbusRtu
 #import robotiq_modbus_rtu.comModbusRtu
 
 from math import ceil

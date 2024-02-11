@@ -2,7 +2,7 @@ import serial
 from serial.serialutil import SerialException
 import os
 
-from pymodbus.client import ModbusSerialClient
+from pymodbus.client.sync import ModbusSerialClient
 
 import robotiq_modbus_rtu.comModbusRtu
 
@@ -53,11 +53,11 @@ class Robotiq2FingerGripper:
         """Request the status from the gripper and return it in the Robotiq2FGripper_robot_input msg type."""
 
         #Acquire status from the Gripper
-        status = self.client.getStatus(6);
+        #status = self.client.getStatus(6);
 
         # Check if read was successful
-        if( status is None ):
-          return False
+        #if( status is None ):
+        #  return False
 
         #Assign the values to their respective variables
         self.gACT = (status[0] >> 0) & 0x01;        

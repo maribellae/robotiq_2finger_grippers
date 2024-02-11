@@ -2,8 +2,7 @@ import serial
 from serial.serialutil import SerialException
 import os
 
-from pymodbus.client.sync import ModbusSerialClient
-print(os.getcwd())
+from pymodbus.client import ModbusSerialClient
 
 import robotiq_modbus_rtu.comModbusRtu
 

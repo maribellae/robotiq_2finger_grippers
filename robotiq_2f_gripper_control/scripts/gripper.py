@@ -30,22 +30,22 @@ class GripperPosControl:
         ## ROS parameters
         self.rate = rospy.Rate(1) # Hz
        
-        ######self.Position_control()
+        self.Position_control()
         
     def callback_gripper(self, msg):      #обработка смс 
         self.robotiq_client.send_goal(msg) 
    
-    '''def Position_control(self):
+    def Position_control(self):
         """ Control the robot"""
         while not rospy.is_shutdown():
             self.rate.sleep()
-        rospy.signal_shutdown("We are done here!")'''
+        rospy.signal_shutdown("We are done here!")
 
 if __name__ == '__main__':
 
     try:
         client = GripperPosControl()
-        ######client.Position_control()
+        client.Position_control()
     except rospy.ROSInterruptException:
         pass
 

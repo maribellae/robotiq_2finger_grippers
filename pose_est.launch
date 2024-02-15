@@ -6,4 +6,5 @@
     <node name="mover" pkg="ur3_moveit" type="mover.py" args="--wait" output="screen" respawn="true" respawn_delay="2.0"/>
     <node name="ur3_joints" pkg="ur_robot_driver" type="unityposcontrol.py" args="--wait" output="screen"/>
     <node name="pose_estimation" pkg="ur3_moveit" type="pose_estimation_script.py" args="--wait" output="screen"/>
+    <node name="gripper" pkg="robotiq_2f_gripper_control" type="gripper.py" args="--wait" output="screen"/>
 </launch>

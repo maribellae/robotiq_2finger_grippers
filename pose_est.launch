@@ -1,12 +1,10 @@
 <launch>
-	<arg name="sim" default="false" />
-	<arg name="debug" default="false" />
     <rosparam file="$(find ur3_moveit)/config/params.yaml" command="load"/>
-	<remap if="$(arg sim)" from="/scaled_pos_joint_traj_controller/follow_joint_trajectory" to="/eff_joint_traj_controller/follow_joint_trajectory"/>
-    <include file="$(find ur3_moveit)/launch/demo.launch" />
+    '<include file="$(find ur3_moveit)/launch/demo.launch" />
     <node name="server_endpoint" pkg="ur3_moveit" type="server_endpoint.py" args="--wait" output="screen" respawn="true" />
+    <node name="pose_estimation" pkg="ur3_moveit" type="pose_estimation_script.py" args="--wait" output="screen"/>
     <node name="mover" pkg="ur3_moveit" type="mover.py" args="--wait" output="screen" respawn="true" respawn_delay="2.0"/>
-		<node name="ur3_joints" pkg="ur_robot_driver" type="unityposcontrol.py" args="--wait" output="screen"/>
+    <node name="ur3_joints" pkg="ur_robot_driver" type="unityposcontrol.py" args="--wait" output="screen"/>
     <node name="pose_estimation" pkg="ur3_moveit" type="pose_estimation_script.py" args="--wait" output="screen"/>
     <node name="gripper" pkg="robotiq_2f_gripper_control" type="gripper.py" args="--wait" output="screen"/>
 </launch>

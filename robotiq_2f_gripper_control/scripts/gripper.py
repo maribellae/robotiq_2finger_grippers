@@ -13,8 +13,8 @@ import actionlib
 
 class GripperPosControl:
     def __init__(self):
-        rospy.init_node('robotiq_2f_client')
-        #rospy.init_node("gripper") #ur3_joints
+        #rospy.init_node('robotiq_2f_client')
+        rospy.init_node("gripper") #ur3_joints
         action_name = rospy.get_param('~action_name', 'command_robotiq_action')
         self.robotiq_client = actionlib.SimpleActionClient(action_name, CommandRobotiqGripperAction) #CommandRobotiqGripperAction
       

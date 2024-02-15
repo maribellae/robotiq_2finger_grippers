@@ -19,7 +19,7 @@ class GripperPosControl:
         self.robotiq_client = actionlib.SimpleActionClient(action_name, CommandRobotiqGripperAction) #CommandRobotiqGripperAction
       
         # Wait until grippers are ready to take command
-        robotiq_client.wait_for_server()
+        self.robotiq_client.wait_for_server()
         rospy.logwarn("Client test: Starting sending goals")
       
         ## ROS Subscriber Topic

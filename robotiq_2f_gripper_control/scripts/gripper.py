@@ -44,7 +44,7 @@ class GripperPosControl:
 if __name__ == '__main__':
 
     try:
-        client = GripperControl()
+        client = GripperPosControl()
         ######client.Position_control()
     except rospy.ROSInterruptException:
         pass

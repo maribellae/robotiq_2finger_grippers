@@ -17,6 +17,7 @@ def main():
         'UR3Trajectory': RosSubscriber('UR3Trajectory', UR3Trajectory, tcp_server),
         'ur3_moveit': RosService('ur3_moveit', MoverService),
         'ur3_joints': RosSubscriber ('ur3_joints', URMoveitJoints ,tcp_server),
+        'gripper': RosSubscriber ('gripper', RobotiqGripperCommand ,tcp_server),
         
     })
     print("AAAAAAAAAAAAAAAA")

@@ -6,7 +6,7 @@ from ros_tcp_endpoint import TcpServer, RosPublisher, RosSubscriber, RosService
 from ur3_moveit.msg import *
 from ur3_moveit.srv import *
 from ur3_moveit.msg import UR3MoveitJoints as URMoveitJoints
-from robotiq_2finger_grippers import RobotiqGripperCommand as RobotiqGripperCommand
+from robotiq_2f_gripper_msgs.msg import RobotiqGripperCommand as RobotiqGripperCommand
 def main():
     ros_node_name = rospy.get_param("/TCP_NODE_NAME", 'TCPServer')
     tcp_server = TcpServer(ros_node_name)
